@@ -145,6 +145,14 @@ details[open] summary::after{content:"–"}
 /* quiz */
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .opt{text-align:left;padding:11px 14px;border:1px solid var(--line);border-radius:14px;background:var(--surface);min-width:0}
+.opt.picked{background:var(--sky);border-color:var(--cobalt)}
+.mk-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mk-form label{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:600;color:var(--muted);min-width:0}
+.mk-form select{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 12px;width:100%}
+.mk-list{display:flex;flex-direction:column}
+.mk-row{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:10px 0;border-top:1px solid var(--line)}
+.mk-row .small{grid-column:1}
+.mk-row button{grid-row:1 / span 2;grid-column:2;align-self:center}
 .opt.ok{background:var(--ok-soft);border-color:var(--ok)}
 .opt.no{background:var(--bad-soft);border-color:var(--bad)}
 
@@ -379,9 +387,17 @@ const RAW2={
 5:`頭|tóu|kepala;眼睛|yǎnjīng|mata;耳朵|ěrduo|telinga;嘴巴|zuǐba|mulut;手|shǒu|tangan;腳|jiǎo|kaki;身體|shēntǐ|badan;肚子|dùzi|perut;痛|tòng|sakit (nyeri);頭痛|tóutòng|sakit kepala;感冒|gǎnmào|flu;發燒|fāshāo|demam;咳嗽|késou|batuk;看病|kànbìng|berobat;健康|jiànkāng|sehat;胖|pàng|gemuk;瘦|shòu|kurus;哭|kū|menangis;笑|xiào|tertawa, tersenyum;生氣|shēngqì|marah;擔心|dānxīn|khawatir;害怕|hàipà|takut;難過|nánguò|sedih;緊張|jǐnzhāng|gugup;放心|fàngxīn|tenang, lega;滿意|mǎnyì|puas;興趣|xìngqù|minat;畫畫|huàhuà|menggambar;爬山|páshān|mendaki gunung;跑步|pǎobù|lari;散步|sànbù|jalan santai;逛街|guàngjiē|jalan-jalan belanja;聊天|liáotiān|mengobrol;上網|shàngwǎng|internetan;網路|wǎnglù|internet;遊戲|yóuxì|permainan, game;比賽|bǐsài|pertandingan;練習|liànxí|berlatih;功課|gōngkè|PR;成績|chéngjī|nilai;考|kǎo|mengikuti ujian;課|kè|pelajaran;懂|dǒng|mengerti;記得|jìde|ingat;忘記|wàngjì|lupa;回答|huídá|menjawab;句子|jùzi|kalimat;說話|shuōhuà|berbicara;介紹|jièshào|memperkenalkan;開會|kāihuì|rapat;經理|jīnglǐ|manajer;加班|jiābān|lembur;請假|qǐngjià|izin tidak masuk;賺錢|zhuàn qián|mencari uang;事情|shìqing|urusan;機會|jīhuì|kesempatan;計畫|jìhuà|rencana;決定|juédìng|memutuskan;需要|xūyào|membutuhkan;習慣|xíguàn|kebiasaan, terbiasa;打算|dǎsuàn|berencana;參加|cānjiā|ikut serta;認真|rènzhēn|serius, tekun;努力|nǔlì|berusaha keras;清楚|qīngchǔ|jelas;方便|fāngbiàn|praktis;熱鬧|rènao|ramai;安靜|ānjìng|tenang, sepi;乾淨|gānjìng|bersih;髒|zāng|kotor;重要|zhòngyào|penting;簡單|jiǎndān|sederhana;特別|tèbié|istimewa, khususnya;早|zǎo|pagi, awal;晚|wǎn|malam, terlambat;遲到|chídào|terlambat datang;收|shōu|menerima;寄|jì|mengirim (paket);信|xìn|surat;訊息|xùnxí|pesan;照顧|zhàogù|merawat;陪|péi|menemani;借|jiè|meminjam;還|huán|mengembalikan;拿|ná|mengambil;放|fàng|menaruh;帶|dài|membawa;開|kāi|membuka, menyalakan;關|guān|menutup, mematikan;洗|xǐ|mencuci;選|xuǎn|memilih;跑|pǎo|berlari;飛|fēi|terbang;動物|dòngwù|hewan;鳥|niǎo|burung;花|huā|bunga; menghabiskan;樹|shù|pohon;冰箱|bīngxiāng|kulkas;冷氣|lěngqì|AC;燈|dēng|lampu;筆|bǐ|pena;紙|zhǐ|kertas;歌|gē|lagu;車|chē|kendaraan, mobil;卡|kǎ|kartu;錢包|qiánbāo|dompet;杯子|bēizi|gelas;張|zhāng|penggolong lembar;隻|zhī|penggolong hewan;位|wèi|penggolong orang (sopan);種|zhǒng|jenis;樓|lóu|lantai, gedung;公斤|gōngjīn|kilogram;公里|gōnglǐ|kilometer`,
 6:`把|bǎ|partikel objek (pola 把);被|bèi|partikel pasif;越來越|yuè lái yuè|makin lama makin;一邊|yìbiān|sambil;雖然|suīrán|meskipun;除了|chúle|selain;以外|yǐwài|selain, di luar;要是|yàoshì|kalau;只要|zhǐyào|asalkan;不但|búdàn|tidak hanya;而且|érqiě|lagi pula;或者|huòzhě|atau;後來|hòulái|kemudian (lampau);最後|zuìhòu|terakhir, akhirnya;終於|zhōngyú|akhirnya (setelah lama);突然|túrán|tiba-tiba;一定|yídìng|pasti;可能|kěnéng|mungkin;大概|dàgài|kira-kira;差不多|chàbuduō|hampir sama;當然|dāngrán|tentu saja;其實|qíshí|sebenarnya;剛|gāng|baru saja;快要|kuàiyào|hampir, sebentar lagi;還沒|hái méi|belum;比較|bǐjiào|relatif lebih;每次|měi cì|setiap kali;一半|yíbàn|setengah;全部|quánbù|seluruhnya;別的|biéde|yang lain;其他|qítā|lainnya;什麼時候|shénme shíhou|kapan;多久|duō jiǔ|berapa lama;怎麼辦|zěnme bàn|harus bagaimana;為了|wèile|demi, supaya;關於|guānyú|tentang;向|xiàng|ke arah, kepada;必須|bìxū|harus;不用|búyòng|tidak perlu;願意|yuànyì|bersedia;敢|gǎn|berani;得到|dédào|mendapatkan;變|biàn|berubah;完|wán|selesai;好像|hǎoxiàng|sepertinya;像|xiàng|mirip;原因|yuányīn|alasan;結果|jiéguǒ|hasil, ternyata;經驗|jīngyàn|pengalaman;意見|yìjiàn|pendapat;消息|xiāoxi|kabar;新聞|xīnwén|berita;故事|gùshi|cerita;文化|wénhuà|budaya;節日|jiérì|hari raya;過年|guònián|merayakan Imlek;聖誕節|Shèngdànjié|Natal`};
 let BASE=[];
-[RAW,RAW2].forEach((R,k)=>Object.keys(R).forEach(ph=>R[ph].split(";").forEach(s=>{const [h,p,m]=s.split("|");if(h&&p&&m&&!BASE.some(b=>b.h===h&&b.p===p))BASE.push({id:h+"·"+p,h,p,m,ph:+ph,a2:k===1})})));
+/* kosakata tambahan sampai cakupan A2 penuh */
+const RAW3={
+1:`些|xiē|beberapa (jamak);這些|zhèxiē|ini (jamak);那些|nàxiē|itu (jamak);這個|zhège|ini;那個|nàge|itu;哪個|nǎge|yang mana;怎麼了|zěnme le|kenapa?;姓|xìng|bermarga;貴姓|guìxìng|marga Anda (sopan);年紀|niánjì|usia;工程師|gōngchéngshī|insinyur;律師|lǜshī|pengacara;護士|hùshì|perawat;司機|sījī|sopir;警察|jǐngchá|polisi;職員|zhíyuán|pegawai;秘書|mìshū|sekretaris;店員|diànyuán|pramuniaga;大學|dàxué|universitas;大學生|dàxuéshēng|mahasiswa;畢業|bìyè|lulus (sekolah);留學|liúxué|kuliah di luar negeri;年級|niánjí|tingkat kelas;班|bān|kelas, regu;人們|rénmen|orang-orang;小孩|xiǎohái|anak kecil;大人|dàrén|orang dewasa;男人|nánrén|pria;女人|nǚrén|wanita;男生|nánshēng|cowok;女生|nǚshēng|cewek;客人|kèrén|tamu;主人|zhǔrén|tuan rumah;世界|shìjiè|dunia;亞洲|Yàzhōu|Asia;歐洲|Ōuzhōu|Eropa;臺北|Táiběi|Taipei;華語|Huáyǔ|bahasa Mandarin;漢字|Hànzì|aksara Han;拼音|pīnyīn|pinyin;注音|zhùyīn|zhuyin (bopomofo);聲調|shēngdiào|nada;發音|fāyīn|pelafalan;翻譯|fānyì|menerjemahkan;字典|zìdiǎn|kamus;生詞|shēngcí|kosakata baru;念|niàn|membaca keras;請問|qǐngwèn|permisi, numpang tanya;沒錯|méicuò|betul;好的|hǎo de|baik, oke;行|xíng|boleh, oke;不錯|búcuò|lumayan bagus;當|dāng|menjadi, sebagai;歡迎光臨|huānyíng guānglín|selamat datang (toko);麻煩|máfan|merepotkan;不好意思|bù hǎoyìsi|permisi, maaf;抱歉|bàoqiàn|minta maaf;祝|zhù|mendoakan, mengucapkan;恭喜|gōngxǐ|selamat!;生日快樂|shēngrì kuàilè|selamat ulang tahun;多大|duō dà|umur berapa;億|yì|seratus juta;半天|bàntiān|lama sekali; setengah hari`,
+2:`家人|jiārén|anggota keluarga;家庭|jiātíng|keluarga, rumah tangga;兄弟姊妹|xiōngdì jiěmèi|saudara kandung;寶寶|bǎobao|bayi;叔叔|shūshu|paman, om;阿姨|āyí|bibi, tante;外公|wàigōng|kakek (dari ibu);外婆|wàipó|nenek (dari ibu);孫子|sūnzi|cucu;寵物|chǒngwù|hewan peliharaan;鐘|zhōng|jam (dinding);手錶|shǒubiǎo|jam tangan;刻|kè|seperempat jam;差|chà|kurang (jam); beda;秒|miǎo|detik;日|rì|hari, tanggal;日期|rìqí|tanggal;週|zhōu|pekan;上個月|shàng ge yuè|bulan lalu;下個月|xià ge yuè|bulan depan;上個星期|shàng ge xīngqí|minggu lalu;下個星期|xià ge xīngqí|minggu depan;前天|qiántiān|kemarin lusa;後天|hòutiān|lusa;每年|měinián|setiap tahun;夜裡|yèlǐ|malam hari;半夜|bànyè|tengah malam;平常|píngcháng|biasanya;通常|tōngcháng|biasanya;從來不|cónglái bù|tidak pernah;剛剛|gānggāng|barusan;將來|jiānglái|masa depan;過去|guòqù|masa lalu; pergi ke sana;刷牙|shuāyá|sikat gigi;洗臉|xǐliǎn|cuci muka;洗衣服|xǐ yīfu|mencuci baju;做飯|zuòfàn|memasak;煮|zhǔ|merebus, memasak;收拾|shōushi|membereskan;整理|zhěnglǐ|merapikan;垃圾|lèsè|sampah;倒垃圾|dào lèsè|membuang sampah;沙發|shāfā|sofa;浴室|yùshì|kamar mandi;樓上|lóushàng|lantai atas;樓下|lóuxià|lantai bawah;電梯|diàntī|lift;樓梯|lóutī|tangga;牆|qiáng|dinding;地上|dìshàng|di lantai;房租|fángzū|uang sewa;租|zū|menyewa;上學|shàngxué|berangkat sekolah;放學|fàngxué|pulang sekolah;午休|wǔxiū|istirahat siang;職業|zhíyè|profesi;薪水|xīnshuǐ|gaji;會議|huìyì|rapat;報告|bàogào|laporan;資料|zīliào|data, bahan;文件|wénjiàn|dokumen;影印|yǐngyìn|fotokopi;列印|lièyìn|mencetak (print);電子郵件|diànzǐ yóujiàn|email;有空|yǒu kòng|ada waktu luang;約|yuē|janjian;約會|yuēhuì|kencan, janji temu;見面|jiànmiàn|bertemu;等等|děngděng|dan lain-lain;一會兒|yíhuìr|sebentar;平日|píngrì|hari biasa`,
+3:`早飯|zǎofàn|sarapan;午飯|wǔfàn|makan siang;晚飯|wǎnfàn|makan malam;點心|diǎnxīn|kudapan;餅乾|bǐnggān|biskuit;冰淇淋|bīngqílín|es krim;巧克力|qiǎokèlì|cokelat;啤酒|píjiǔ|bir;酒|jiǔ|minuman beralkohol;可樂|kělè|cola;開水|kāishuǐ|air matang;冰|bīng|es; dingin;豆漿|dòujiāng|susu kedelai;豆腐|dòufu|tahu;雞蛋|jīdàn|telur ayam;飯糰|fàntuán|nasi kepal;炒飯|chǎofàn|nasi goreng;炒麵|chǎomiàn|mi goreng;牛肉麵|niúròu miàn|mi daging sapi;火鍋|huǒguō|hotpot;包子|bāozi|bakpao;粥|zhōu|bubur;海鮮|hǎixiān|makanan laut;蝦|xiā|udang;羊肉|yángròu|daging kambing;橘子|júzi|jeruk;葡萄|pútáo|anggur;芒果|mángguǒ|mangga;草莓|cǎoméi|stroberi;檸檬|níngméng|lemon;番茄|fānqié|tomat;味道|wèidào|rasa;口味|kǒuwèi|selera, varian rasa;香|xiāng|harum, sedap;苦|kǔ|pahit;油|yóu|minyak;醬油|jiàngyóu|kecap asin;飽|bǎo|kenyang;吃飽|chībǎo|makan sampai kenyang;嘗|cháng|mencicipi;請客|qǐngkè|mentraktir;訂位|dìngwèi|reservasi tempat;位子|wèizi|tempat duduk;買單|mǎidān|minta bon;結帳|jiézhàng|membayar tagihan;發票|fāpiào|struk belanja;收據|shōujù|kuitansi;信用卡|xìnyòngkǎ|kartu kredit;悠遊卡|yōuyóukǎ|kartu EasyCard;零錢|língqián|uang receh;花錢|huā qián|menghabiskan uang;省錢|shěng qián|berhemat;存錢|cún qián|menabung;免費|miǎnfèi|gratis;一點點|yìdiǎndiǎn|sedikit sekali;大小|dàxiǎo|ukuran;外套|wàitào|jaket;襯衫|chènshān|kemeja;牛仔褲|niúzǎikù|celana jeans;毛衣|máoyī|sweter;眼鏡|yǎnjìng|kacamata;化妝品|huàzhuāngpǐn|kosmetik;香水|xiāngshuǐ|parfum;牙膏|yágāo|pasta gigi;衛生紙|wèishēngzhǐ|tisu toilet;毛巾|máojīn|handuk;好看|hǎokàn|bagus (dilihat);難看|nánkàn|jelek;好聽|hǎotīng|enak didengar;店|diàn|toko;市場|shìchǎng|pasar;網購|wǎnggòu|belanja online;排隊|páiduì|antre;選擇|xuǎnzé|pilihan; memilih;退|tuì|mengembalikan (barang);斤|jīn|kati (600 gram);份|fèn|porsi;盒|hé|kotak (penggolong);瓶|píng|botol;包|bāo|bungkus (penggolong);片|piàn|lembar, iris;有名|yǒumíng|terkenal;新鮮|xīnxiān|segar;熟|shú|matang;生|shēng|mentah`,
+4:`地址|dìzhǐ|alamat;街|jiē|jalan (kota);路口|lùkǒu|persimpangan;馬路|mǎlù|jalan raya;橋|qiáo|jembatan;大樓|dàlóu|gedung;這邊|zhèbiān|sebelah sini;那邊|nàbiān|sebelah sana;哪邊|nǎbiān|sebelah mana;裡|lǐ|dalam;外|wài|luar;前|qián|depan;後|hòu|belakang;底下|dǐxia|di bawah;方向|fāngxiàng|arah;走路|zǒulù|berjalan kaki;過馬路|guò mǎlù|menyeberang jalan;左轉|zuǒzhuǎn|belok kiri;右轉|yòuzhuǎn|belok kanan;經過|jīngguò|melewati;到達|dàodá|tiba;換車|huànchē|ganti kendaraan;坐車|zuòchē|naik kendaraan;高鐵|gāotiě|kereta cepat;船|chuán|kapal;停車|tíngchē|parkir;停車場|tíngchēchǎng|tempat parkir;加油站|jiāyóuzhàn|SPBU;交通|jiāotōng|lalu lintas;車票|chēpiào|tiket kendaraan;機票|jīpiào|tiket pesawat;來回|láihuí|pulang-pergi;單程|dānchéng|sekali jalan;座位|zuòwèi|kursi, tempat duduk;準時|zhǔnshí|tepat waktu;晚點|wǎndiǎn|terlambat (jadwal);起飛|qǐfēi|lepas landas;旅館|lǚguǎn|penginapan;民宿|mínsù|homestay;訂|dìng|memesan;景點|jǐngdiǎn|tempat wisata;博物館|bówùguǎn|museum;動物園|dòngwùyuán|kebun binatang;電影院|diànyǐngyuàn|bioskop;書店|shūdiàn|toko buku;咖啡店|kāfēidiàn|kedai kopi;藥局|yàojú|apotek;警察局|jǐngchájú|kantor polisi;洗手間|xǐshǒujiān|toilet;鄉下|xiāngxià|pedesaan;天空|tiānkōng|langit;雲|yún|awan;雪|xuě|salju;下雪|xiàxuě|turun salju;雨|yǔ|hujan;打雷|dǎléi|petir;氣溫|qìwēn|suhu udara;季節|jìjié|musim;悶熱|mēnrè|gerah;濕|shī|basah, lembap;乾|gān|kering;天氣預報|tiānqì yùbào|prakiraan cuaca;假期|jiàqí|liburan;寒假|hánjià|libur musim dingin;暑假|shǔjià|libur musim panas;旅遊|lǚyóu|berwisata;導遊|dǎoyóu|pemandu wisata;參觀|cānguān|mengunjungi;紀念品|jìniànpǐn|suvenir, oleh-oleh;簽證|qiānzhèng|visa;迷路|mílù|tersesat;一路順風|yílù shùnfēng|selamat jalan`,
+5:`臉|liǎn|wajah;頭髮|tóufǎ|rambut;鼻子|bízi|hidung;牙齒|yáchǐ|gigi;背|bèi|punggung;腿|tuǐ|tungkai kaki;心|xīn|hati, jantung;喉嚨|hóulóng|tenggorokan;受傷|shòushāng|terluka;流鼻水|liú bíshuǐ|pilek;吃藥|chī yào|minum obat;打針|dǎzhēn|disuntik;住院|zhùyuàn|dirawat inap;掛號|guàhào|mendaftar berobat;病人|bìngrén|pasien;休假|xiūjià|cuti;睡不著|shuì bù zháo|tidak bisa tidur;精神|jīngshén|semangat, segar;輕鬆|qīngsōng|santai, ringan;壓力|yālì|tekanan, stres;心情|xīnqíng|suasana hati;開心|kāixīn|senang;傷心|shāngxīn|sedih;失望|shīwàng|kecewa;無聊|wúliáo|bosan;寂寞|jìmò|kesepian;感動|gǎndòng|terharu;感謝|gǎnxiè|berterima kasih;討厭|tǎoyàn|benci, menyebalkan;怕|pà|takut;相信|xiāngxìn|percaya;想要|xiǎngyào|ingin;愛好|àihào|hobi;釣魚|diàoyú|memancing;露營|lùyíng|berkemah;健身|jiànshēn|fitness;健身房|jiànshēnfáng|pusat kebugaran;瑜伽|yújiā|yoga;籃球|lánqiú|basket;足球|zúqiú|sepak bola;網球|wǎngqiú|tenis;羽毛球|yǔmáoqiú|bulu tangkis;彈|tán|memainkan (alat musik);鋼琴|gāngqín|piano;吉他|jítā|gitar;跳|tiào|melompat;照相|zhàoxiàng|memotret;相機|xiàngjī|kamera;小說|xiǎoshuō|novel;雜誌|zázhì|majalah;報紙|bàozhǐ|koran;節目|jiémù|acara;演唱會|yǎnchànghuì|konser;表演|biǎoyǎn|pertunjukan;歌手|gēshǒu|penyanyi;有趣|yǒuqù|menarik, lucu;好玩|hǎowán|seru;一般|yìbān|biasa saja;普通|pǔtōng|biasa, umum;厲害|lìhài|hebat;聰明|cōngmíng|pintar;可惜|kěxí|sayang sekali;奇怪|qíguài|aneh;危險|wéixiǎn|berbahaya;安全|ānquán|aman;小心|xiǎoxīn|hati-hati;注意|zhùyì|memperhatikan;幫忙|bāngmáng|membantu;幫助|bāngzhù|bantuan;教|jiāo|mengajar;學會|xuéhuì|berhasil mempelajari;複習|fùxí|mengulang pelajaran;預習|yùxí|belajar lebih dulu;題目|tímù|soal;答案|dá'àn|jawaban;分數|fēnshù|nilai, skor;及格|jígé|lulus (ujian);進步|jìnbù|kemajuan;水準|shuǐzhǔn|tingkat, level;程度|chéngdù|tingkat;會話|huìhuà|percakapan;聽力|tīnglì|kemampuan mendengar;閱讀|yuèdú|membaca (pemahaman);作業|zuòyè|tugas, PR;筆記|bǐjì|catatan;本子|běnzi|buku tulis;書包|shūbāo|tas sekolah;網站|wǎngzhàn|situs web;密碼|mìmǎ|kata sandi;下載|xiàzài|mengunduh;傳|chuán|mengirim (pesan);打字|dǎzì|mengetik;留言|liúyán|meninggalkan pesan;聯絡|liánluò|menghubungi;通知|tōngzhī|pemberitahuan;完成|wánchéng|menyelesaikan;結束|jiéshù|berakhir;繼續|jìxù|melanjutkan;成功|chénggōng|berhasil;失敗|shībài|gagal;改|gǎi|mengubah, memperbaiki;檢查|jiǎnchá|memeriksa;解決|jiějué|memecahkan (masalah);討論|tǎolùn|berdiskusi;同意|tóngyì|setuju;反對|fǎnduì|menentang;建議|jiànyì|saran; menyarankan;提醒|tíxǐng|mengingatkan;答應|dāyìng|menyanggupi;拒絕|jùjué|menolak;接|jiē|menjemput; mengangkat (telepon);搬|bān|memindahkan;掉|diào|jatuh;丟|diū|kehilangan, membuang;撿|jiǎn|memungut;破|pò|sobek, pecah;壞|huài|rusak, jahat;修|xiū|memperbaiki;用功|yònggōng|rajin belajar;懶|lǎn|malas`,
+6:`不過|búguò|tapi;另外|lìngwài|selain itu;接著|jiēzhe|lalu, kemudian;首先|shǒuxiān|pertama-tama;總之|zǒngzhī|singkatnya;例如|lìrú|misalnya;比如|bǐrú|misalnya;就是|jiùshì|yaitu, justru;只好|zhǐhǎo|terpaksa;本來|běnlái|semula;原來|yuánlái|ternyata;尤其|yóuqí|terutama;甚至|shènzhì|bahkan;幾乎|jīhū|hampir;至少|zhìshǎo|setidaknya;最好|zuìhǎo|sebaiknya;大約|dàyuē|kira-kira;左右|zuǒyòu|sekitar;以上|yǐshàng|di atas, lebih dari;以下|yǐxià|di bawah, kurang dari;之前|zhīqián|sebelum;之後|zhīhòu|setelah;同時|tóngshí|bersamaan;有點|yǒudiǎn|agak;稍微|shāowéi|sedikit;十分|shífēn|sangat;挺|tǐng|cukup, lumayan;也許|yěxǔ|mungkin;恐怕|kǒngpà|khawatirnya;難道|nándào|masa sih;到底|dàodǐ|sebenarnya (tanya);果然|guǒrán|benar saja;忽然|hūrán|tiba-tiba;漸漸|jiànjiàn|perlahan-lahan;常|cháng|sering;永遠|yǒngyuǎn|selamanya;隨便|suíbiàn|terserah;互相|hùxiāng|saling;各|gè|masing-masing;每個人|měi ge rén|setiap orang;任何|rènhé|apa pun;所有|suǒyǒu|semua;一切|yíqiè|segalanya;有的|yǒude|sebagian;不同|bùtóng|berbeda;相同|xiāngtóng|sama;方法|fāngfǎ|cara, metode;辦法|bànfǎ|jalan keluar;理由|lǐyóu|alasan;目的|mùdì|tujuan;目標|mùbiāo|target;夢想|mèngxiǎng|impian;能力|nénglì|kemampuan;情況|qíngkuàng|situasi;關係|guānxì|hubungan;部分|bùfèn|bagian;方面|fāngmiàn|aspek;內容|nèiróng|isi;規定|guīdìng|peraturan;社會|shèhuì|masyarakat;環境|huánjìng|lingkungan;歷史|lìshǐ|sejarah;傳統|chuántǒng|tradisi;中秋節|Zhōngqiūjié|Festival Kue Bulan;端午節|Duānwǔjié|Festival Perahu Naga;春節|Chūnjié|Imlek;紅包|hóngbāo|angpao;月餅|yuèbǐng|kue bulan;拜年|bàinián|kunjungan tahun baru;數字|shùzì|angka;看法|kànfǎ|pandangan;想法|xiǎngfǎ|ide, pikiran;主意|zhǔyi|ide;發生|fāshēng|terjadi;出現|chūxiàn|muncul;改變|gǎibiàn|perubahan; mengubah;變成|biànchéng|berubah menjadi;認為|rènwéi|berpendapat;以為|yǐwéi|mengira;記|jì|mencatat, mengingat;了解|liǎojiě|memahami;明白|míngbái|mengerti;發現|fāxiàn|menemukan;表示|biǎoshì|menyatakan;越|yuè|semakin;使|shǐ|membuat (menyebabkan);關心|guānxīn|peduli;影響|yǐngxiǎng|pengaruh;接受|jiēshòu|menerima;留|liú|tinggal; menyisakan;剩|shèng|tersisa;滿|mǎn|penuh`};
+[RAW,RAW2,RAW3].forEach((R,k)=>Object.keys(R).forEach(ph=>R[ph].split(/;(?! )/).forEach(s=>{const [h,p,m]=s.split("|");if(h&&p&&m&&!BASE.some(b=>b.h===h&&b.p===p))BASE.push({id:h+"·"+p,h,p,m,ph:+ph,a2:k>0,lv:k})})));
 /* urutan belajar: inti fase 1, ekstra fase 1, inti fase 2, ... */
-BASE.sort((a,b)=>a.ph-b.ph||(a.a2-b.a2));
+BASE.sort((a,b)=>a.ph-b.ph||(a.lv-b.lv));
 
 const TASKS={
  srs:{t:"Ulang kartu yang jatuh tempo",min:"20–30 mnt",d:"Cocok di kereta. Dengarkan audionya, ucapkan sebelum membalik kartu.",go:"cards"},
@@ -390,7 +406,7 @@ const TASKS={
  gram:{t:"Pola kalimat fase ini",min:"20 mnt",d:"Baca satu pola, ucapkan contohnya 5×, lalu buat 2 kalimatmu sendiri.",go:"today-gram"},
  listen:{t:"Kuis listening di app",min:"10 mnt",d:"",go:"quiz"},
  read:{t:"Latihan membaca",min:"15–20 mnt",d:""},
- mock:{t:"Simulasi tes resmi TOCFL",min:"60 mnt",d:"Kerjakan satu set listening atau reading dari situs resmi, catat skor dan tipe soal yang salah.",link:"https://tocfl.edu.tw/tocfl/index.php/exam/test/page/20"},
+ mock:{t:"Mock test",min:"60 mnt",d:"Bagian 1: mock di app (listening + membaca, ±20 mnt). Bagian 2: simulasi resmi TOCFL (±40 mnt), lalu catat skornya di tab Rencana.",go:"mock",link:"https://tocfl.edu.tw/tocfl/index.php/exam/test/page/20"},
  weekly:{t:"Review mingguan",min:"30 mnt",d:"Kuis 2× untuk kata minggu ini. Kata yang salah kembali ke kartu."},
  rest:{t:"Istirahat ringan",min:"10 mnt",d:"Cukup ulang kartu yang jatuh tempo. Otak juga butuh jeda."}
 };
@@ -410,9 +426,9 @@ const fmt=s=>{const d=parse(s);return DOW[d.getDay()]+", "+d.getDate()+" "+MON[d
 const phaseOf=s=>PHASES.find(p=>s>=p.from&&s<=p.to)||(s<START?PHASES[0]:PHASES[PHASES.length-1]);
 
 /* ---------- STATE ---------- */
-let S={v:2,examDate:"2026-12-12",done:{},srs:{},custom:[],newPerDay:25,quiz:[]};
+let S={v:3,examDate:"2026-12-12",done:{},srs:{},custom:[],newPerDay:30,quiz:[],mocks:[]};
 const LS="tocfl-notebook-v1";
-function migrate(o){if(!o.v||o.v<2){o.v=2;o.newPerDay=Math.max(o.newPerDay||0,25)}return o}
+function migrate(o){if(!o.v||o.v<2){o.v=2;o.newPerDay=Math.max(o.newPerDay||0,25)}if(o.v<3){o.v=3;o.newPerDay=Math.max(o.newPerDay||0,30)}if(!Array.isArray(o.mocks))o.mocks=[];return o}
 try{const raw=localStorage.getItem(LS);if(raw)S=migrate(Object.assign(S,JSON.parse(raw)))}catch(e){}
 let dbRef=null,saving=false,pending=false,saveTimer=null;
 function allWords(){return BASE.concat((S.custom||[]).map(c=>({...c,id:"c·"+c.h+"·"+c.p,ph:0})))}
@@ -456,8 +472,8 @@ function tasksFor(s){
   const ph=phaseOf(s),dow=parse(s).getDay(),dl=diff(s,S.examDate);
   if(dl===0)return [];
   if(dl===1)return ["rest"];
-  if(ph.id===7)return dow===0?["srs","audio"]:["srs","audio","mock","read"];
-  if(dow===6)return ph.id>=4?["srs","new","mock","weekly"]:["srs","new","weekly","audio"];
+  if(ph.id===7){if(dow===0)return ["srs","audio"];const t=["srs","audio","mock","read"];if(unseenPool().filter(w=>w.ph>0).length)t.splice(1,0,"new");return t}
+  if(dow===6)return ["srs","new","mock","weekly"];
   if(dow===0)return ["srs","audio"];
   return ["srs","new","audio","gram","listen","read"];
 }
@@ -496,7 +512,7 @@ function render(){
   header();
   document.querySelectorAll("#tabs button").forEach(b=>b.setAttribute("aria-current",b.dataset.v===view?"page":"false"));
   if(view!=="lesson")stopPlay();
-  ({today:rToday,plan:rPlan,cards:rCards,quiz:rQuiz,words:rWords,lesson:rLesson})[view]();
+  ({today:rToday,plan:rPlan,cards:rCards,quiz:rQuiz,words:rWords,lesson:rLesson,mock:rMock})[view]();
 }
 
 /* ---- daily dialogs & readings ---- */
@@ -623,7 +639,7 @@ function rToday(){
       return `<div class="task ${done.has(id)?"done":""}">
         <button class="box" data-task="${id}" aria-pressed="${done.has(id)}" aria-label="Tandai ${esc(k.t)}">${done.has(id)?"✓":""}</button>
         <div class="t-body"><div class="t-title">${esc(k.t)}</div><p class="small muted">${esc(d)}</p>
-          ${k.go?`<button class="go" data-go="${k.go}">Buka →</button>`:""}${k.link?`<a class="small" href="${k.link}" target="_blank" rel="noopener">Buka simulasi resmi →</a>`:""}</div>
+          ${k.go?`<button class="go" data-go="${k.go}">${k.go==="mock"?"Mulai mock di app →":"Buka →"}</button>`:""}${k.link?`<a class="small" href="${k.link}" target="_blank" rel="noopener">Buka simulasi resmi →</a>`:""}</div>
         <span class="t-min">${k.min}</span></div>`}).join("")}</div>
   </section>
 
@@ -668,10 +684,10 @@ function rPlan(){
     <h2>Pola harian</h2>
     <ul class="clean small">
       <li><b>Senin–Jumat (±2,5 jam):</b> kartu dan audio di perjalanan pergi-pulang, lalu kata baru, pola kalimat, kuis listening, dan membaca.</li>
-      <li><b>Sabtu:</b> kata baru + review mingguan. Mulai fase 4: simulasi tes resmi.</li>
+      <li><b>Sabtu:</b> kata baru, <b>mock test</b> (di app + simulasi resmi), dan review mingguan.</li>
       <li><b>Minggu:</b> ulang kartu + audio. Hari ini sengaja lebih ringan supaya kamu tidak burnout.</li>
       <li><b>Fase 7:</b> simulasi setiap hari dan kartu lemah. H-1 istirahat.</li>
-      <li><b>Kosakata:</b> 25 kata baru per hari (Senin–Sabtu) supaya deck habis sekitar akhir November dan masih ada waktu untuk mengulang.</li>
+      <li><b>Kosakata:</b> 30 kata baru per hari (Senin–Sabtu). Deck berisi ±1.160 kata, mencakup kosakata A2; sisa kata yang belum terbuka dilanjutkan di fase 7.</li>
     </ul>
   </section>`;
 }
@@ -822,7 +838,7 @@ function rWords(){
     <div class="vl" id="wl"></div>
   </section>
   <section class="panel stack">
-    <div><h2>Tambah kata sendiri</h2><p class="small muted">Deck ini berisi ${BASE.length} kata. Untuk mencapai ±1.000 kata A2, tambahkan sisanya dari daftar kosakata resmi TOCFL, buku pelajaranmu, atau kata yang sering muncul di podcast dan simulasi.</p></div>
+    <div><h2>Tambah kata sendiri</h2><p class="small muted">Deck ini berisi ${BASE.length} kata dan sudah mencakup kosakata A2. Tambahkan kata baru yang kamu temukan di podcast atau simulasi.</p></div>
     <form class="form" id="af">
       <input type="text" id="ah" placeholder="漢字" required>
       <input type="text" id="ap" placeholder="pinyin" required>
@@ -843,6 +859,99 @@ function rWords(){
   document.getElementById("af").onsubmit=e=>{e.preventDefault();
     const h=document.getElementById("ah").value.trim(),p=document.getElementById("ap").value.trim(),m=document.getElementById("am").value.trim();
     if(!h||!p||!m)return;S.custom=(S.custom||[]).concat([{h,p,m}]);save();wf.ph=0;rWords()};
+}
+
+
+/* ---- weekly mock test (in-app) ---- */
+let MK=null,mkTimer=null;
+function seeded(seed){let x=seed%2147483647;if(x<=0)x+=2147483646;return()=>(x=x*16807%2147483647)/2147483647}
+function buildMock(){
+  const cap=Math.min(phaseOf(today()).id,6),rnd=seeded(+today().replace(/-/g,""));
+  const pick=k=>ALL[k].map((x,i)=>({x,i})).filter(o=>o.x.ph<=cap).sort(()=>rnd()-.5).slice(0,5).map(o=>o.i);
+  return {d:pick("d"),r:pick("r"),ans:{},plays:{},start:Date.now(),done:false,cap};
+}
+function mkCount(kind){let c=0,t=0;MK[kind].forEach(gi=>ALL[kind][gi].q.forEach((q,k)=>{t++;if(MK.ans[kind+gi+"-"+k]===q[6])c++}));return [c,t]}
+function playDialog(gi,btn){
+  const it=ALL.d[gi],tok=++playTok;let i=0;try{speechSynthesis.cancel()}catch(e){}
+  const next=()=>{if(tok!==playTok)return;if(i>=it.l.length){if(btn)btn.disabled=MK.plays[gi]>=2&&!MK.done;return}
+    const [sp,zh]=it.l[i++];sayLine(zh,sp,false,()=>setTimeout(next,450))};next();
+}
+function rMock(){
+  if(!MK||MK.day!==today()){MK=buildMock();MK.day=today()}
+  clearInterval(mkTimer);
+  const total=MK.d.reduce((a,gi)=>a+ALL.d[gi].q.length,0)+MK.r.reduce((a,gi)=>a+ALL.r[gi].q.length,0);
+  const answered=Object.keys(MK.ans).length;
+  const qHTML=(kind,gi,it)=>it.q.map((q,k)=>{const [zq,pq,iq,opts,popts,iopts,a]=q,key=kind+gi+"-"+k,got=MK.ans[key];
+    return `<div class="stack" style="gap:8px"><div><div class="han" style="font-size:19px">${esc(zq)}</div>${MK.done?`<div class="mn">${esc(iq)}</div>`:""}</div>
+    <div class="opts">${opts.map((o,j)=>{let c="";if(MK.done){if(j===a)c="ok";else if(j===got)c="no"}else if(j===got)c="picked";
+      return `<button class="opt ${c}" data-mk="${key}" data-o="${j}" ${MK.done?"disabled":""}><span class="han" style="font-size:17px">${esc(o)}</span>${MK.done?`<span class="mn" style="display:block">${esc(iopts[j])}</span>`:""}</button>`}).join("")}</div></div>`}).join("");
+  const [lc,lt]=mkCount("d"),[rc,rt]=mkCount("r");
+  const pct=x=>x[1]?Math.round(x[0]/x[1]*100):0;
+  V.innerHTML=`
+  <div class="row" style="justify-content:space-between"><button class="btn" data-go="today">← Hari ini</button><span class="small num" id="mkTime"></span></div>
+  ${MK.done?`<section class="panel stack" style="background:var(--butter)">
+     <span class="eyebrow">Hasil mock · ${fmt(today())}</span>
+     <div class="stats"><div class="stat"><b class="num">${pct([lc,lt])}%</b><span class="small">listening ${lc}/${lt}</span></div>
+       <div class="stat"><b class="num">${pct([rc,rt])}%</b><span class="small">membaca ${rc}/${rt}</span></div>
+       <div class="stat"><b class="num">${Math.round(MK.secs/60)}</b><span class="small">menit</span></div></div>
+     <p class="small">${pct([lc+rc,lt+rt])>=80?"Mantap! Materi fase ini sudah kuat.":pct([lc+rc,lt+rt])>=60?"Lumayan. Cek soal yang salah di bawah, lalu ulangi dialog atau bacaannya.":"Belum stabil, dan itu wajar. Ulangi dialog dan bacaan yang salah minggu ini."} Skor sudah tersimpan di tab Rencana. Lanjut ke simulasi resmi, lalu catat skornya juga.</p>
+     <div class="row"><a class="btn primary" href="https://tocfl.edu.tw/tocfl/index.php/exam/test/page/20" target="_blank" rel="noopener" style="text-decoration:none">Simulasi resmi →</a><button class="btn" data-go="plan">Catat skor resmi</button></div>
+   </section>`:`<section class="panel stack">
+     <span class="eyebrow">Mock test mingguan · materi fase 1–${MK.cap}</span>
+     <h2>mock test di app</h2>
+     <ol class="steps small"><li><b>Listening:</b> tiap dialog maksimal diputar 2×, tanpa teks.</li><li><b>Membaca:</b> tanpa pinyin dan arti.</li><li>Jawab semua soal, lalu ketuk <b>Selesai</b>. Jawaban dan terjemahan baru muncul setelahnya.</li></ol>
+     ${hasVoice()?"":`<p class="note">Suara Mandarin belum terdeteksi. Tambahkan suara "Chinese (Taiwan)" di pengaturan text-to-speech supaya bagian listening bisa diputar.</p>`}
+   </section>`}
+  <h2 style="color:var(--on-page,var(--cobalt));padding:4px 4px 0">bagian 1 · listening</h2>
+  ${MK.d.map((gi,n)=>{const it=ALL.d[gi],left=2-(MK.plays[gi]||0);return `<section class="panel stack">
+    <div class="row" style="justify-content:space-between"><span class="eyebrow">Dialog ${n+1}${MK.done?" · "+esc(it.t)+" · "+esc(it.tm):""}</span>
+      <button class="btn primary" data-mkplay="${gi}" ${left<=0&&!MK.done?"disabled":""}>▶ Putar${MK.done?"":` (sisa ${left})`}</button></div>
+    ${MK.done?`<div class="doc">${it.l.map(l=>`<div class="lv-line has-sp"><span class="sp sp-${l[0]==="A"?"a":"b"}">${esc(l[0])}</span><div class="lv-txt"><div class="han zh">${esc(l[1])}</div><div class="pp">${esc(l[2])}</div><div class="mn">${esc(l[3])}</div></div><span></span></div>`).join("")}</div>`:""}
+    ${qHTML("d",gi,it)}</section>`}).join("")}
+  <h2 style="padding:4px 4px 0">bagian 2 · membaca</h2>
+  ${MK.r.map((gi,n)=>{const it=ALL.r[gi];return `<section class="panel stack">
+    <span class="eyebrow">Bacaan ${n+1} · ${esc(it.k)}</span>
+    <div class="doc doc-${({"Pengumuman":"notice","Pesan":"chat","Menu":"menu","Buku harian":"diary","Kartu nama":"card"}[it.k]||"text")}">${it.l.map(l=>`<div class="lv-line ${l[0]?"has-sp":""}">${l[0]?`<span class="sp sp-${l[0]==="美玲"?"a":"b"}">${esc(l[0])}</span>`:""}<div class="lv-txt"><div class="han zh">${esc(l[1])}</div>${MK.done?`<div class="pp">${esc(l[2])}</div><div class="mn">${esc(l[3])}</div>`:""}</div><span></span></div>`).join("")}</div>
+    ${qHTML("r",gi,it)}</section>`}).join("")}
+  ${MK.done?`<button class="btn" id="mkNew">Ulangi dengan soal acak lain</button>`:`<button class="btn primary" id="mkDone">Selesai (${answered}/${total} dijawab)</button>`}`;
+  const tick=()=>{const el=document.getElementById("mkTime");if(!el)return clearInterval(mkTimer);const s=MK.done?MK.secs:Math.round((Date.now()-MK.start)/1000);el.textContent=(MK.done?"Waktu ":"⏱ ")+Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
+  tick();if(!MK.done)mkTimer=setInterval(tick,1000);
+  V.querySelectorAll("[data-mk]").forEach(b=>b.onclick=()=>{MK.ans[b.dataset.mk]=+b.dataset.o;const y=window.scrollY;rMock();window.scrollTo(0,y)});
+  V.querySelectorAll("[data-mkplay]").forEach(b=>b.onclick=()=>{const gi=+b.dataset.mkplay;if(!MK.done){MK.plays[gi]=(MK.plays[gi]||0)+1;b.textContent="▶ Putar (sisa "+(2-MK.plays[gi])+")"}playDialog(gi,b)});
+  const dn=document.getElementById("mkDone");if(dn)dn.onclick=()=>{stopPlay();MK.done=true;MK.secs=Math.round((Date.now()-MK.start)/1000);
+    const L=mkCount("d"),R=mkCount("r");S.mocks=(S.mocks||[]).concat([{d:today(),src:"app",l:L,r:R}]).slice(-40);save();rMock();window.scrollTo(0,0)};
+  const nw=document.getElementById("mkNew");if(nw)nw.onclick=()=>{MK=buildMock();MK.day=today();const rnd=Math.random;MK.d.sort(()=>rnd()-.5);rMock();window.scrollTo(0,0)};
+}
+function mockHistoryHTML(){
+  const rows=(S.mocks||[]).map((m,i)=>({...m,i})).reverse();
+  const pc=a=>a&&a[1]?Math.round(a[0]/a[1]*100)+"%":"–";
+  return `<section class="panel stack">
+    <div><h2>riwayat mock test</h2><p class="small muted">Mock di app tercatat otomatis. Simulasi resmi dicatat manual di sini setiap Sabtu supaya progresnya kelihatan.</p></div>
+    <div class="mk-form">
+      <label>Tanggal<input type="date" id="mkD" value="${today()}"></label>
+      <label>Level hasil (opsional)<select id="mkLv"><option value="">–</option><option>Belum A1</option><option>A1</option><option>A2</option><option>B1</option></select></label>
+      <label>Listening benar<input type="number" id="mkL1" min="0" inputmode="numeric"></label>
+      <label>dari<input type="number" id="mkL2" min="1" inputmode="numeric"></label>
+      <label>Membaca benar<input type="number" id="mkR1" min="0" inputmode="numeric"></label>
+      <label>dari<input type="number" id="mkR2" min="1" inputmode="numeric"></label>
+      <button class="btn primary" id="mkSave" style="grid-column:1/-1">Simpan skor simulasi resmi</button>
+    </div>
+    <p class="small muted" id="mkMsg" aria-live="polite"></p>
+    ${rows.length?`<div class="mk-list">${rows.map(m=>`<div class="mk-row"><div><b>${fmt(m.d)}</b> <span class="kind-tag" style="transform:none">${m.src==="app"?"app":"resmi"}</span>${m.lv?` <span class="small">· ${esc(m.lv)}</span>`:""}</div>
+      <div class="small num">Listening ${m.l?m.l[0]+"/"+m.l[1]:"–"} (${pc(m.l)}) · Membaca ${m.r?m.r[0]+"/"+m.r[1]:"–"} (${pc(m.r)})</div>
+      <button class="speak" data-mkdel="${m.i}" aria-label="Hapus">hapus</button></div>`).join("")}</div>`:`<p class="small muted">Belum ada skor. Mock pertama: Sabtu ini. Skor awal yang rendah itu wajar; gunanya sebagai titik awal.</p>`}
+  </section>`;
+}
+function bindMockHistory(){
+  const sv=document.getElementById("mkSave");if(!sv)return;
+  sv.onclick=()=>{const g=id=>document.getElementById(id).value,n=id=>parseInt(g(id),10);
+    const l1=n("mkL1"),l2=n("mkL2"),r1=n("mkR1"),r2=n("mkR2"),msg=document.getElementById("mkMsg");
+    const okL=!isNaN(l1)&&l2>0&&l1<=l2,okR=!isNaN(r1)&&r2>0&&r1<=r2;
+    if(!okL&&!okR){msg.textContent="Isi minimal satu bagian: jumlah benar dan total soalnya (benar tidak boleh lebih dari total).";return}
+    S.mocks=(S.mocks||[]).concat([{d:g("mkD")||today(),src:"resmi",lv:g("mkLv"),l:okL?[l1,l2]:null,r:okR?[r1,r2]:null}]).slice(-40);save();
+    if(g("mkD")===today()&&!(S.done[today()]||[]).includes("mock"))markTask("mock",true);
+    rPlan();};
+  document.querySelectorAll("[data-mkdel]").forEach(b=>b.onclick=()=>{S.mocks.splice(+b.dataset.mkdel,1);save();rPlan()});
 }
 
 /* ---- stroke order ---- */
@@ -939,6 +1048,7 @@ rPlan=function(){_rPlan();V.insertAdjacentHTML("beforeend",`
     ${PHASES.map(p=>`<div class="pl"><div><b>Fase ${p.id}</b><div class="d">${fmt(p.from)}</div></div><div style="min-width:0">${AUDIO[p.id].map((a,i)=>`<div><b>${esc(a.n)}</b> <span class="muted">· ${i?"Sel/Kam/Sab":"Sen/Rab/Jum/Min"}</span>${a.u?` · <a href="${a.u}" target="_blank" rel="noopener">buka</a>`:""}</div>`).join("")}</div></div>`).join("")}
     <p>Sekali dengar saja di fase 2: <a href="https://mandarinwithmisslin.buzzsprout.com/1726772/episodes/10770145-where-to-find-tocfl-resources-how-to-prepare-tocfl-band-a-i-answered-student-s-question" target="_blank" rel="noopener">episode Miss Lin tentang persiapan TOCFL Band A</a>.</p>
   </section>
+  ${mockHistoryHTML()}
   <section class="panel stack small">
     <h2>Cadangan progres</h2>
     <p class="muted">Simpan kode ini (misalnya di Notes) supaya progres bisa dipulihkan atau dipindah ke perangkat lain.</p>
@@ -946,6 +1056,7 @@ rPlan=function(){_rPlan();V.insertAdjacentHTML("beforeend",`
     <textarea id="bk" rows="4" style="width:100%;border:1px solid var(--line);border-radius:8px;padding:9px;background:var(--surface);font:12px/1.4 ui-monospace,monospace" placeholder="Tempel kode cadangan di sini, lalu ketuk Pulihkan"></textarea>
     <p class="muted" id="bkMsg" aria-live="polite"></p>
   </section>`);
+  bindMockHistory();
   document.getElementById("exd").onchange=e=>{if(e.target.value){S.examDate=e.target.value;save();render()}};
   const bk=document.getElementById("bk"),msg=document.getElementById("bkMsg");
   document.getElementById("bkCopy").onclick=()=>{
@@ -955,7 +1066,7 @@ rPlan=function(){_rPlan();V.insertAdjacentHTML("beforeend",`
   };
   document.getElementById("bkLoad").onclick=()=>{
     try{const o=JSON.parse(decodeURIComponent(escape(atob(bk.value.trim()))));if(!o||typeof o.srs!=="object")throw 0;
-      S=migrate(Object.assign({v:2,examDate:"2026-12-12",done:{},srs:{},custom:[],newPerDay:25,quiz:[]},o));save();render();
+      S=migrate(Object.assign({v:2,examDate:"2026-12-12",done:{},srs:{},custom:[],newPerDay:25,quiz:[],mocks:[]},o));save();render();
       document.getElementById("bkMsg").textContent="Progres dipulihkan."}
     catch(e){msg.textContent="Kode tidak bisa dibaca. Pastikan kodenya disalin utuh."}
   };
