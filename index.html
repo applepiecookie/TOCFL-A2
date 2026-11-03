@@ -717,7 +717,7 @@ function rCards(){
     <div><h2>Kata baru</h2><p class="small muted">${left?`Masih ${left} kata baru untuk hari ini, diambil berurutan dari deck.`:"Jatah kata baru hari ini sudah habis."}${pool?` Sisa ${pool} kata belum dibuka.`:" Semua kata di deck sudah dibuka; tambahkan kata dari daftar resmi di tab Kosakata."}</p></div>
     <button class="btn" id="sNew" ${left&&pool?"":"disabled"}>Buka ${Math.min(left,pool,10)} kata baru</button>
     <p class="small muted">Tips: buka dalam 2–3 sesi kecil (misalnya 10 pagi, 10 siang, 5 malam), bukan 25 sekaligus.</p>
-    <label class="row small"><span>Kata baru per hari</span><input type="number" id="npd" min="5" max="40" value="${S.newPerDay}" style="width:80px"></label>
+    <label class="row small"><span>Kata baru per hari</span><input type="number" id="npd" min="5" max="60" value="${S.newPerDay}" style="width:80px"></label>
   </section>
   <section class="panel stack small">
     <h3>Cara pakai kartu</h3>
@@ -731,7 +731,7 @@ function rCards(){
   </section>`;
   document.getElementById("sDue").onclick=()=>startSession("srs");
   document.getElementById("sNew").onclick=()=>startSession("new");
-  document.getElementById("npd").onchange=e=>{const v=Math.max(5,Math.min(40,+e.target.value||25));S.newPerDay=v;save();render()};
+  document.getElementById("npd").onchange=e=>{const v=Math.max(5,Math.min(60,+e.target.value||30));S.newPerDay=v;save();render()};
 }
 function rCard(){
   const s=session,w=s.q[s.i];
